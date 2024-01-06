@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import Item from "./Item"
 
-
 function Lists({ todos, setTodos, setCount }) {
 
   return (
@@ -9,8 +8,8 @@ function Lists({ todos, setTodos, setCount }) {
       {todos.map((todo) => <Item 
           key={todo.id} 
           item={todo} 
-          setTodos={setTodos} 
           todos={todos}
+          setTodos={setTodos} 
           setCount={setCount}/>)}
     </ul>
   )

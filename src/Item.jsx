@@ -30,7 +30,7 @@ function Item({item, todos, setTodos, setCount}) {
       }
     })
 }
-function dandleDbClick() {
+function handleDbClick() {
   setEdit(!edit)
 }
 
@@ -42,7 +42,7 @@ function handleExit(e) {
  
   return (      
       <li 
-        onDoubleClick={dandleDbClick}
+        onDoubleClick={handleDbClick}
         onKeyDown={handleExit}
         ><input type="checkbox" 
         checked={completed}

@@ -1,9 +1,5 @@
-
-
 // eslint-disable-next-line react/prop-types
 function Header({ addTodo, count, setCount }) {
-
-  
 
   function handleKeyDown(event) {
     if (event.key === 'Enter' && event.target.value !== '') {
