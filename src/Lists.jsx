@@ -6,11 +6,12 @@ function Lists({ todos, setTodos, setCount }) {
 
   return (
     <ul id="ul_task_list">
-      {todos.map((todo) => <Item key={todo.id} 
-                                item={todo} 
-                                setTodos={setTodos} 
-                                todos={todos}
-                                setCount={setCount}/>)}
+      {todos.map((todo) => <Item 
+          key={todo.id} 
+          item={todo} 
+          setTodos={setTodos} 
+          todos={todos}
+          setCount={setCount}/>)}
     </ul>
   )
 }

@@ -19,6 +19,7 @@ function Item({item, todos, setTodos, setCount}) {
 }
 
   const handleCompleted = (e) => {
+    console.log('changed');
     todos.map((item, index) => {
       if(item.id == e.target.id){
         setCompleted(!completed)
@@ -32,14 +33,13 @@ function Item({item, todos, setTodos, setCount}) {
 }
  
   return (      
-    <label className=''>
       <li ><input type="checkbox" 
-        checked={completed} 
-        onChange={handleCompleted}
-        id={item.id}/>{title}
+        // checked={completed}
+        // onChange={handleCompleted}
+        id={item.id}/>
+        <label>{title}</label>
+        <button type="button" className="destroy" id={item.id} onClick={handleDelete}></button>
       </li>
-      <button type="button" className="destroy" id={item.id} onClick={handleDelete}></button>
-    </label> 
   )
 }
 

@@ -3,11 +3,12 @@
 function Footer({todos, setTodos, count, setCount}) {
 
   function activeEvents() {
+    console.log('active');
     count = 0
     todos.map((todo, index) => {
-      document.getElementsByTagName('label')[index].style.display = 'block'
+      document.getElementsByTagName('li')[index].style.display = 'block'
       if(todo.completed) {
-        document.getElementsByTagName('label')[index].style.display = 'none'
+        document.getElementsByTagName('li')[index].style.display = 'none'
         count++
       }
     })
@@ -15,11 +16,12 @@ function Footer({todos, setTodos, count, setCount}) {
   }
 
   function completedEvents() {
+    console.log('completed');
     count = 0
     todos.map((todo, index) => {
-      document.getElementsByTagName('label')[index].style.display = 'block'
+      document.getElementsByTagName('li')[index].style.display = 'block'
       if(todo.completed === false) {
-        document.getElementsByTagName('label')[index].style.display = 'none'
+        document.getElementsByTagName('li')[index].style.display = 'none'
         count++
       }
     })
@@ -28,7 +30,7 @@ function Footer({todos, setTodos, count, setCount}) {
 
   function allEvents() {
     todos.map((todo, index) => {
-      document.getElementsByTagName('label')[index].style.display = 'block'
+      document.getElementsByTagName('li')[index].style.display = 'block'
     })
     setCount(todos.length)
   }
