@@ -3,7 +3,6 @@
 function Footer({todos, setTodos, count, setCount}) {
 
   function activeEvents() {
-    console.log('active');
     count = 0
     todos.map((todo, index) => {
       document.getElementsByTagName('li')[index].style.display = 'block'
@@ -16,7 +15,6 @@ function Footer({todos, setTodos, count, setCount}) {
   }
 
   function completedEvents() {
-    console.log('completed');
     count = 0
     todos.map((todo, index) => {
       document.getElementsByTagName('li')[index].style.display = 'block'

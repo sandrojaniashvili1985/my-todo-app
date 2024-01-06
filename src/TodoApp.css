@@ -46,11 +46,9 @@ li {
     display: block;
     border-bottom: 1px solid #ccc;
     line-height: 60px;
-    /* border: 5px solid #711818; */
-    /* width: max-content; */
 }
 
-li::before {
+input[type="checkbox"]::before {
     content: "";
     position: absolute;
     width: 30px;
@@ -133,7 +131,13 @@ span {
 }
 
 .show {
-    display: block;
+    display: inline-block;
+}
+
+#inputAdd,#inputAdd:hover  {
+    border: none;
+    background-color: transparent;
+    outline: none;
 }
 
 .destroy{

@@ -19,7 +19,6 @@ function Item({item, todos, setTodos, setCount}) {
 }
 
   const handleCompleted = (e) => {
-    console.log('changed');
     todos.map((item, index) => {
       if(item.id == e.target.id){
         setCompleted(!completed)
@@ -31,13 +30,26 @@ function Item({item, todos, setTodos, setCount}) {
       }
     })
 }
+function dandleDbClick() {
+  setEdit(!edit)
+}
+
+function handleExit(e) {
+  if (e.key === 'Enter') {
+  setEdit(false)
+}
+}
  
   return (      
-      <li ><input type="checkbox" 
-        // checked={completed}
-        // onChange={handleCompleted}
+      <li 
+        onDoubleClick={dandleDbClick}
+        onKeyDown={handleExit}
+        ><input type="checkbox" 
+        checked={completed}
+        onChange={handleCompleted}
         id={item.id}/>
-        <label>{title}</label>
+        <input id='inputAdd' className={!edit ? "hide" : ""} type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <label className={edit ? "hide" : ""}>{title}</label>
         <button type="button" className="destroy" id={item.id} onClick={handleDelete}></button>
       </li>
   )
